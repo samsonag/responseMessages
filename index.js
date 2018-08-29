@@ -4,7 +4,7 @@ const responses = {
     '302':{},
     '400': {
         name: 'BadRequest',
-        msg: 'something bad happened'
+        msg: 'bad request:'
     },
     '401':{},
     '403':{},
@@ -18,12 +18,12 @@ function getResponse(code) {
 
 function getCustom(code, msg, hint = null) {
     let resp = getResponse(code);
-    resp.msg += ` ${msg}`;
-
-    if (hint)
-        resp.hint = hint;
     
-    return resp;
+    return {
+        name: resp.name,
+        msg:  `${resp.msg} ${msg}`,
+        hint: resp.hint ? resp.hint: null
+    };
 }
 
 module.exports = {
