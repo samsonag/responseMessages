@@ -26,7 +26,7 @@ function getCustom(code, msg, hint = null) {
     return resp;
 }
 
-module.export = {
+module.exports = {
     getResponse: getResponse,
     getCustom: getCustom,
     responses: responses
