@@ -18,9 +18,16 @@ function getResponse(code) {
 
 function getCustom(code, msg, hint = null) {
     let resp = getResponse(code);
-    resp.msg += msg;
+    resp.msg += ` ${msg}`;
+
     if (hint)
         resp.hint = hint;
     
     return resp;
+}
+
+module.export = {
+    getResponse: getResponse,
+    getCustom: getCustom,
+    responses: responses
 }
