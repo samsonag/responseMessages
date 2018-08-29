@@ -18,11 +18,11 @@ function getResponse(code) {
 
 function getCustom(code, msg, hint = null) {
     let resp = getResponse(code);
-    
+
     return {
+        hint: hint,
         name: resp.name,
-        msg:  `${resp.msg} ${msg}`,
-        hint: resp.hint ? resp.hint: null
+        msg:  `${resp.msg} ${msg}`
     };
 }
 
